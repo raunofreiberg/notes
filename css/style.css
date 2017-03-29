@@ -1,1 +1,51 @@
  [v-cloak] { display: none; } 
+
+
+.todoapp {
+    position: relative;
+    top: 300px;    
+}
+
+
+html {
+
+width:100%;
+height:100%;  
+margin:0;
+padding:0;
+   
+}
+
+body {
+ 
+background:#DB0066;
+background-image: radial-gradient(circle at 93% 85% , rgb(250, 0, 100), transparent 100%), radial-gradient(circle at 95% 3% , rgb(242, 0, 255), transparent 100%), radial-gradient(circle at 12% 65% , rgb(147, 0,191), transparent 100%)
+
+
+  
+}
+
+canvas {
+
+
+display:block;
+
+
+}
+
+#animation {
+
+position: absolute;
+left: 0; 
+top: 0;
+width:100%;
+height:100%;
+margin:0;
+padding:0;
+
+}
+
+.todoapp h1 {
+    color: #111;    
+}
+
