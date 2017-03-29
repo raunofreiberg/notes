@@ -11,7 +11,7 @@
     
     // particles color
     red:255,
-    green:100,
+    green:255,
     blue:255,
     opacity:1,
     randomOpacity: false,
