@@ -1,6 +1,6 @@
 	options = {
 
-    particlesNumber: 900,
+    particlesNumber: 600,
     initialSize: 3,
     randomSize: true,
     minimumSize:1,
@@ -14,7 +14,7 @@
     green:100,
     blue:255,
     opacity:1,
-    randomOpacity: true,
+    randomOpacity: false,
     particleMinimumOpacity:0.1,
     particleMaximumOpacity:0.9,
     
