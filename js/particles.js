@@ -15,8 +15,8 @@
     blue:255,
     opacity:1,
     randomOpacity: false,
-    particleMinimumOpacity:0.1,
-    particleMaximumOpacity:0.9,
+    particleMinimumOpacity:1,
+    particleMaximumOpacity:3,
     
     // connections between particles
     drawConnections: false,
