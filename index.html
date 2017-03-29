@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue TodoMVC</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://static.qiakr.com/lib/todomvc-common/todo.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <section class="todoapp">
+	<header class="header">
+		<h1>Vue Todos</h1>
+		<!-- 输入 -->
+		<input class="new-todo" autocomplete="off" placeholder="What needs to be done?" 
+					 v-model="newTodo" 
+					 @keyup.enter="addTodo">
+	</header>
+	<section class="main" v-show="todos.length" v-cloak>
+		<!-- 全选 -->
+		<input type="checkbox" class="toggle-all" v-model="allDone" />
+		<!-- 列表 -->
+		<ul class="todo-list">
+			<li class="todo" 
+					v-for="todo in filteredTodos" 
+					:class="{completed: todo.completed, editing:todo == editedTodo}">
+				<div class="view">
+					<input type="checkbox" class="toggle" v-model="todo.completed" />
+					<label @dblclick="editTodo(todo)">{{todo.title}}</label>
+					<button class="destroy" @click="removeTodo(todo)"></button>
+				</div>
+				
+				<input type="text" class="edit" 
+							 v-model="todo.title" 
+							 v-todo-focus="todo == editedTodo" 
+							 @blur="doneEdit(todo)" 
+							 @keyup.enter="doneEdit(todo)" 
+							 @keyup.esc="cancelEdit(todo)" />
+			</li>
+		</ul>
+	</section>
+	<footer class="footer" v-show="todos.length" v-cloak>
+		<span class="todo-count">
+			<strong v-text="remaining"></strong> {{remaining | pluralize 'item'}} left
+		</span>
+		<ul class="filters">
+			<li><a href="#/all" :class="{selected:visibility=='all'}">All</a></li>
+			<li><a href="#/active" :class="{selected:visibility=='active'}">Active</a></li>
+			<li><a href="#/completed" :class="{selected:visibility=='completed'}">Completed</a></li>
+		</ul>
+		<button class="clear-completed">Clear completed</button>
+	</footer>
+</section>
+
+<footer class="info">
+	<p>Double-click to edit a todo</p>
+	<p>Written by <a href="javascript:;">Aitter</a></p>
+	<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+</footer>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js'></script>
+<script src='http://libs.cdnjs.net/Director/1.2.8/director.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
