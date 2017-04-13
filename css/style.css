@@ -6,6 +6,16 @@
     top: 300px;    
 }
 
+@media screen and (max-width: 320px) {
+    .todoapp {
+        top: 100px;
+    }
+    .todoapp h1 {
+        font-size: 60px;
+    }
+
+}
+
 
 html {
 
